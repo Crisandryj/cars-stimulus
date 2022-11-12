@@ -5,6 +5,7 @@ class CarsController < ApplicationController
 
   def new
     @car = Car.new
+    @car.variants.build
   end
 
   def create
@@ -19,6 +20,7 @@ class CarsController < ApplicationController
   private
 
   def car_params
-    params.require(:car).permit(:model, :year, :name, variants_attributes: [:type]
+    params.require(:car).permit(:model, :year, :name, variants_attributes: [:type])
   end
+
 end
