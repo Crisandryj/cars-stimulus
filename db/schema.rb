@@ -29,14 +29,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_11_201250) do
   end
 
   create_table "variants", force: :cascade do |t|
-    t.string "type"
-    t.integer "car_id"
+    t.string "car_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["car_id"], name: "index_variants_on_car_id"
   end
 
   add_foreign_key "car_variants", "cars"
   add_foreign_key "car_variants", "variants"
-  add_foreign_key "variants", "cars"
 end
