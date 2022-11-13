@@ -17,6 +17,19 @@ class CarsController < ApplicationController
     # raise params.inspect
   end
 
+  def edit
+    @car = Car.find(params[:id])
+  end
+
+  def update
+    @car = Car.find(params[:id])
+    @car.update(car_params)
+    if @car.save
+      redirect_to root_path
+    end
+  end
+
+
   private
 
   def car_params
