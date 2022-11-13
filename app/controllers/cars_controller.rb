@@ -17,8 +17,13 @@ class CarsController < ApplicationController
     # raise params.inspect
   end
 
+  def show
+    @car = Car.find(params[:id])
+  end
+
   def edit
     @car = Car.find(params[:id])
+    @car.variants.build
   end
 
   def update
