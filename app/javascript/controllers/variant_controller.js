@@ -2,14 +2,15 @@ import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
   static targets = ["type"]
-  static classes = [ "hide" ]
+  static classes = ["hide"]
+  // 
+  // connect() {
+  //   this.typeTarget.textContent = "Hello World!"
+  // }
 
-  connect() {
-    this.typeTarget.textContent = "Hello World!"
-  }
-
-  connect() {
+  add() {
     event.preventDefault()
-    this.typeTarget.classList.toggle{this.hideClass}
+    this.typeTarget.classList.toggle(this.hideClass)
   }
+
 }

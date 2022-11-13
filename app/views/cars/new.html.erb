@@ -16,9 +16,9 @@
 </div>
 
 <div data-controller="variant" data-variant-hide-class="hide">
-<button data-action="click->variant#add">Add Variant</button>
+<button data-action="click->variant#add">Type</button>
 
-<div data-variant-target="type">
+<div data-variant-target="type" class="hide">
   <%= form.fields_for :variants do |var| %>
     <%= var.label :car_type %>
     <%= var.text_field :car_type %>
