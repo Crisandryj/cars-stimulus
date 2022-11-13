@@ -15,11 +15,15 @@
   <%= form.number_field :year%>
 </div>
 
-<div data-controller="variant" data-variant-target="car_type">
+<div data-controller="variant" data-variant-hide-class="hide">
+<button data-action="click->variant#add">Add Variant</button>
+
+<div data-variant-target="type">
   <%= form.fields_for :variants do |var| %>
     <%= var.label :car_type %>
     <%= var.text_field :car_type %>
   <% end %>
+</div>
 </div>
 
   <%= form.submit %>
